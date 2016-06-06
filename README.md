@@ -8,7 +8,7 @@ This behavior was removed since [Chrome 52](https://codereview.chromium.org/1854
 
 ### From the Chrome Web Store
 
-- Install from the [Chrome Web Store](#link)
+- Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/backspace-to-go-back/nlffgllnjjkheddehpolbanogdeaogbc)
 
 ### From source
 
