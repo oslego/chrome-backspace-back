@@ -6,19 +6,50 @@
   Not using `addEventListener` because the browser does not trigger the handler
   when the Backspace key is pressed.
 */
+pressedKeys = {};
+
 document.onkeydown = function(e) {
-  if (e.key !== 'Backspace') {
-    return;
-  }
 
-  if (["INPUT", "TEXTAREA"].indexOf(document.activeElement.tagName) > -1) {
-    return;
-  }
+    var li = pressedKeys[e.key];
+    if (!li) {
+        pressedKeys[e.key] = true;
+    }
 
-  if (document.activeElement.isContentEditable) {
-    return;
-  }
+    if (pressedKeys['Backspace']) {
+        if (pressedKeys['Shift'] && Object.keys(pressedKeys).length == 2) {
+            if (["INPUT", "TEXTAREA"].indexOf(document.activeElement.tagName) > -1) {
+                return;
+            }
 
-	e.preventDefault();
-	window.history.back();
+            if (document.activeElement.isContentEditable) {
+                return;
+            }
+            else {
+                e.preventDefault();
+                window.history.forward();
+            }
+        }
+        else if (Object.keys(pressedKeys).length == 1) {
+            if (["INPUT", "TEXTAREA"].indexOf(document.activeElement.tagName) > -1) {
+                return;
+            }
+
+            if (document.activeElement.isContentEditable) {
+                return;
+            }
+            else {
+                e.preventDefault();
+                window.history.back();
+            }
+        }
+    }
+    return;
+};
+
+document.onkeyup = function(e) {
+    var li = pressedKeys[e.key];
+    if (li) {
+        delete pressedKeys[e.key];
+    }
+    return;
 };
