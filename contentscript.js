@@ -11,7 +11,10 @@ document.onkeydown = function(e) {
     return;
   }
 
-  if (["INPUT", "TEXTAREA"].indexOf(document.activeElement.tagName) > -1) {
+  // Overcomes issues with custom elements wrapping INPUT
+  const target = event.path[0];
+
+  if (["INPUT", "TEXTAREA"].indexOf(target.tagName) > -1) {
     return;
   }
 
