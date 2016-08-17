@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Backspace to go Back",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Razvan Caliman",
   "description": "Restores browser behavior of navigating to previous page when pressing the Backspace key.",
   "minimum_chrome_version": "52",
