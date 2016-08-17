@@ -14,12 +14,14 @@ document.onkeydown = function(e) {
   // Overcomes issues with custom elements wrapping INPUT
   const target = event.path[0];
 
+  // Do not handle user input on input and textarea elements.
   // In some scenarios tagName can be lowercase. Ensure we catch that.
   if (["input", "textarea"].indexOf(target.tagName.toLowerCase()) > -1) {
     return;
   }
 
-  if (document.activeElement.isContentEditable) {
+  // Do not handle elements with contenteditable = true
+  if (target.isContentEditable) {
     return;
   }
 
