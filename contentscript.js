@@ -23,6 +23,16 @@ document.onkeydown = function(e) {
     return;
   }
 
-	e.preventDefault();
-	window.history.back();
+  // Do not handle alongside modifiers except Shift key
+  if (e.ctrlKey || e.altKey || e.metaKey) {
+    return;
+  }
+
+  e.preventDefault();
+
+  if (e.shiftKey) {
+    window.history.forward();
+  } else {
+    window.history.back();
+  }
 };
