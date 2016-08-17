@@ -14,7 +14,8 @@ document.onkeydown = function(e) {
   // Overcomes issues with custom elements wrapping INPUT
   const target = event.path[0];
 
-  if (["INPUT", "TEXTAREA"].indexOf(target.tagName) > -1) {
+  // In some scenarios tagName can be lowercase. Ensure we catch that.
+  if (["input", "textarea"].indexOf(target.tagName.toLowerCase()) > -1) {
     return;
   }
 
