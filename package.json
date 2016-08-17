@@ -1,0 +1,11 @@
+{
+  "name": "chrome-backspace-back",
+  "version": "0.0.0",
+  "scripts": {
+    "release": "zip -r chrome-backspace-back.zip . --exclude *.git* changelog* icon.svg screenshot.jpg README.md package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oslego/chrome-backspace-back.git"
+  }
+}
