@@ -4,7 +4,7 @@ Google Chrome extension that restores browser behavior of navigating to previous
 
 This behavior was removed since [Chrome 52](https://codereview.chromium.org/1854963002).
 
-**Update 8-16-2016:** Google has since released an official extension that offers this functionality. [Go Back with Backspace](https://chrome.google.com/webstore/detail/go-back-with-backspace/eekailopagacbcdloonjhbiecobagjci) by Google, available in the Chrome Web Store.
+**Update 8-16-2016:** Google released an official extension that offers the same functionality. [Go Back with Backspace](https://chrome.google.com/webstore/detail/go-back-with-backspace/eekailopagacbcdloonjhbiecobagjci) by Google, available in the Chrome Web Store.
 
 ## How to install
 
